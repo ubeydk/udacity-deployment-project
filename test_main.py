@@ -12,6 +12,8 @@ TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjEzMDY3OTAsIm5iZiI6MT
 EMAIL = 'wolf@thedoor.com'
 PASSWORD = 'huff-puff'
 
+assert False
+
 @pytest.fixture
 def client():
     os.environ['JWT_SECRET'] = SECRET
@@ -23,12 +25,14 @@ def client():
 
 
 def test_health(client):
+    assert False
     response = client.get('/')
     assert response.status_code == 200
     assert response.json == 'Healthy'
 
 
 def test_auth(client):
+    assert False
     body = {'email': EMAIL,
             'password': PASSWORD}
     response = client.post('/auth', 
